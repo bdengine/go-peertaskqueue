@@ -134,6 +134,8 @@ func (p *PeerTracker) PushTasks(tasks ...peertask.Task) {
 	defer p.activelk.Unlock()
 
 	for _, task := range tasks {
+		// 弃用优先级 TODO 更好的方法是移除相关的计算
+		task.Priority = 0
 		// If the new task doesn't add any more information over what we
 		// already have in the active queue, then we can skip the new task
 		if !p.taskHasMoreInfoThanActiveTasks(task) {

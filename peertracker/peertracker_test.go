@@ -87,7 +87,7 @@ func TestPushPopSizeAndOrder(t *testing.T) {
 	if len(popped) != 1 {
 		t.Fatal("Expected 1 task")
 	}
-	if popped[0].Topic != "2" {
+	if popped[0].Topic != "1" {
 		t.Fatal("Expected tasks in order")
 	}
 	if pending != 20 {
@@ -98,7 +98,7 @@ func TestPushPopSizeAndOrder(t *testing.T) {
 	if len(popped) != 2 {
 		t.Fatal("Expected 2 tasks")
 	}
-	if popped[0].Topic != "3" || popped[1].Topic != "1" {
+	if popped[0].Topic != "3" || popped[1].Topic != "2" {
 		t.Fatal("Expected tasks in order")
 	}
 	if pending != 0 {
