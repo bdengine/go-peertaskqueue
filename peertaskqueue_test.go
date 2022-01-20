@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ipfs/go-peertaskqueue/peertask"
-	"github.com/ipfs/go-peertaskqueue/testutil"
+	"github.com/bdengine/go-peertaskqueue/peertask"
+	"github.com/bdengine/go-peertaskqueue/testutil"
 	peer "github.com/libp2p/go-libp2p-core/peer"
 )
 
