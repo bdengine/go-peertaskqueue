@@ -134,7 +134,7 @@ func (p *PeerTracker) PushTasks(tasks ...peertask.Task) {
 	defer p.activelk.Unlock()
 
 	for _, task := range tasks {
-		// 弃用优先级 TODO 更好的方法是移除相关的计算
+		// 弃用优先级 TODO 更好的方法是改变任务优先级算法
 		task.Priority = 0
 		// If the new task doesn't add any more information over what we
 		// already have in the active queue, then we can skip the new task
@@ -144,6 +144,10 @@ func (p *PeerTracker) PushTasks(tasks ...peertask.Task) {
 
 		// If there is already a non-active task with this Topic
 		if existingTask, ok := p.pendingTasks[task.Topic]; ok {
+			// 跳过备份任务
+			if task.IsBackup || existingTask.IsBackup {
+				continue
+			}
 			// If the new task has a higher priority than the old task,
 			if task.Priority > existingTask.Priority {
 				// Update the priority and the task's position in the queue

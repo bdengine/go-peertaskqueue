@@ -40,7 +40,7 @@ type Data interface{}
 type Task struct {
 	// Topic for the task
 	Topic Topic
-	// Priority of the task
+	// Priority of the task // todo 根据任务类型设置优先级别
 	Priority int
 	// The size of the task
 	// - peers with most active work are deprioritized
@@ -48,6 +48,8 @@ type Task struct {
 	Work int
 	// Arbitrary data associated with this Task by the client
 	Data Data
+
+	IsBackup bool
 }
 
 // QueueTask contains a Task, and also some bookkeeping information.
