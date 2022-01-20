@@ -3,8 +3,8 @@ package peertracker
 import (
 	"testing"
 
-	"github.com/bdengine/go-peertaskqueue/peertask"
-	"github.com/bdengine/go-peertaskqueue/testutil"
+	"github.com/ipfs/go-peertaskqueue/peertask"
+	"github.com/ipfs/go-peertaskqueue/testutil"
 )
 
 func TestEmpty(t *testing.T) {

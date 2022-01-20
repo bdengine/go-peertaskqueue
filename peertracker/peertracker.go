@@ -4,8 +4,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bdengine/go-peertaskqueue/peertask"
 	pq "github.com/ipfs/go-ipfs-pq"
+	"github.com/ipfs/go-peertaskqueue/peertask"
 	peer "github.com/libp2p/go-libp2p-core/peer"
 )
 
